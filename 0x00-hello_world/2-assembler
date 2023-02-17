@@ -1,2 +1,2 @@
 #!/bin/bash
-$(basename $CFILE .c) | gcc -S $CFILE -o $(basename $CFILE.o) 
+gcc -S $CFILE -o | tr '.c' '.s' 
