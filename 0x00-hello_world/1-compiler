@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc $CFILE -E -o | mv "${CFILE%.c}.o" "$CFILE"
+gcc $CFILE -E -o | echo $CFILE | tr '.c' '.o'
