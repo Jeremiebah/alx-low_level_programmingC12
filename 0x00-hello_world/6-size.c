@@ -1,6 +1,8 @@
 #include <stdio.h>
 
-int main(void) /*main entry*/
+int main(void /**
+*main entry
+*/)
 {
 printf("Size of char: %zu bytes\n", sizeof(char));
 printf("Size of short: %zu bytes\n", sizeof(short));
