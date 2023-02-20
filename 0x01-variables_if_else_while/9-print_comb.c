@@ -1,17 +1,16 @@
-/*Write a program that prints all possible combinations of single-digit n*/
+/* combinaison*/
 #include <stdio.h>
 
-int main(/**
-	  *main entry function
-	  */)
+int main(void/**
+	      *main entry function
+	      */)
 {
-for (int i = 0; i < 9; i++)
+putchar('0');
+for (int i = 1; i < 10; i++)
 {
-putchar(i + 48);
 putchar(',');
+putchar(' ');
+putchar(i + '0');
 }
-putchar('9');
-
-putchar('\n');
 return (0);
 }
