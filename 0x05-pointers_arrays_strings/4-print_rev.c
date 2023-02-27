@@ -1,4 +1,5 @@
 /*header*/
+#include <stdio.h>
 void print_rev(char *s /**
 			*main entry
 			*/)
