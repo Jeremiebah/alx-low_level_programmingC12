@@ -1,3 +1,7 @@
-void reset_to_98(int *n) {
-    *n = 98;
+/*header comment*/
+void reset_to_98(int *n /**
+			 *main entry
+			 */)
+{
+*n = 98;
 }
