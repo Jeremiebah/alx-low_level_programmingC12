@@ -10,7 +10,7 @@ while (*s != '\0')
 {
 if (*s == '-')
 {
-sign = 1;
+sign = -1;
 }
 else if (*s >= '0' && *s <= '9')
 {
@@ -25,5 +25,5 @@ break;
 }
 s++;
 }
-return (num *sign);
+return (num * sign);
 }
