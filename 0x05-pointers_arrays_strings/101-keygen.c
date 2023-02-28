@@ -2,26 +2,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 #define PASSWORD_LENGTH 10
 
 int main(void/**
-	      *main entry
+	      *
 	      */)
 {
-char password[PASSWORD_LENGTH + 1];
-const char *valid_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-+=[]{};:'\",.<>/?\\|`~";
-
 srand(time(NULL));
-
+char password[PASSWORD_LENGTH+1];
+memset(password, 0, PASSWORD_LENGTH+1);
 for (int i = 0; i < PASSWORD_LENGTH; i++)
-{
-password[i] = valid_chars[rand() % (sizeof(valid_chars) - 1)];
+    {
+int r = rand() % 62;
+if (r < 10)
+	{
+password[i] = '0' + r;
 }
-
-password[PASSWORD_LENGTH] = '\0';
-
+	else if (r < 36)
+	{
+password[i] = 'A' + r - 10;
+}
+	else
+{
+password[i] = 'a' + r - 36;
+}
+}
 printf("%s\n", password);
-
 return (0);
 }
