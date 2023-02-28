@@ -2,28 +2,35 @@
 #include <stdio.h>
 
 int _atoi(char *s /**
-		   *main function entry
+		   *entry
 		   */)
 {
-int sign = 1, num = 0;
-while (*s != '\0')
-{
-if (*s == '-')
+int result = 0;
+int sign = 1;
+int i = 0;
+
+while (s[i] == ' ')
+    {
+i++;
+    }
+if (s[i] == '-')
 {
 sign = -1;
+i++;
 }
-else if (*s >= '0' && *s <= '9')
+else if (s[i] == '+')
 {
-num = num *10 + (*s - '0');
+i++;
 }
-else if (*s == '+')
+
+while (s[i] >= '0' && s[i] <= '9')
 {
-}
-else if (num > 0)
+if (result > (INT_MAX - (s[i] - '0')) / 10)
 {
-break;
+return sign == 1 ? INT_MAX : INT_MIN;
 }
-s++;
+result = result * 10 + (s[i] - '0');
+i++;
 }
-return (num *sign);
+return (result *sign);
 }
