@@ -23,5 +23,5 @@ char dest[20];
 _strcpy(dest, source);
 printf("Source string: %s\n", source);
 printf("Copied string: %s\n", dest);
-return (0);
+return (1);
 }
