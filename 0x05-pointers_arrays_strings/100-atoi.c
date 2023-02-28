@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int _atoi(char *s /**
-		   *main function
+		   *main function entry
 		   */)
 {
 int sign = 1, num = 0;
