@@ -3,40 +3,29 @@
 #include <stdlib.h>
 #include <string.h>
 
-char *leet(char *str/**
-		     *main entry
-		     */)
+char *leet(char *str /**
+*
+*/)
 {
-char *encoded = malloc(strlen(str) + 1);
-int i, j;
-
-for (i = 0, j = 0; str[i] != '\0'; i++, j++)
+char *result = str;
+char *leet_chars = "aAeEoOtTlL";
+char *leet_subs = "433771";
+for (; *str; str++)
 {
-if (str[i] == 'a' || str[i] == 'A')
-encoded[j] = '4';
-else if (str[i] == 'e' || str[i] == 'E')
-encoded[j] = '3';
-else if (str[i] == 'o' || str[i] == 'O')
-encoded[j] = '0';
-else if (str[i] == 't' || str[i] == 'T')
-encoded[j] = '7';
-else if (str[i] == 'l' || str[i] == 'L')
-encoded[j] = '1';
-else
-encoded[j] = str[i];
+int i;
+for (i = 0; leet_chars[i]; i++)
+{
+if (*str == leet_chars[i])
+{
+*result++ = leet_subs[i / 2];
+break;
 }
-encoded[j] = '\0';
-
-return (encoded);
 }
-
-int main(/**
-	  *entry
-	  */)
+if (!leet_chars[i])
 {
-char str[] = "Hello, World!";
-char *encoded = leet(str);
-printf("%s\n", encoded);
-free(encoded);
-return (0);
+*result++ = *str;
+}
+}
+*result = '\0';
+return (str);
 }
