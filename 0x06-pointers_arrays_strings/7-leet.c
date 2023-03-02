@@ -29,3 +29,14 @@ encoded[j] = '\0';
 
 return (encoded);
 }
+
+int main(/**
+	  *entry
+	  */)
+{
+char str[] = "Hello, World!";
+char *encoded = leet(str);
+printf("%s\n", encoded);
+free(encoded);
+return (0);
+}
