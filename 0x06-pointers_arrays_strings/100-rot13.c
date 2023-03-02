@@ -27,18 +27,3 @@ encoded[j] = '\0';
 
 return (encoded);
 }
-
-int main(void/**
-	      *
-	      */)
-{
-char str[] = "Hello, World!";
-char *encoded = rot13(str);
-int i;
-for (i = 0; encoded[i] != '\0'; i++)
-{
-putchar(encoded[i]);
-}
-free(encoded);
-return (0);
-}
